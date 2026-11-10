@@ -119,7 +119,7 @@ class MainForm : Form
         {
             lblStatus.Text = "";
             btnGo.Enabled = true;
-            MessageBox.Show("ffmpeg tidak ditemukan. Taruh ffmpeg.exe di folder yang sama dengan aplikasi ini.\n\n" + ex.Message, Text);
+            MessageBox.Show("ffmpeg tidak ditemukan.\n\nInstall dengan perintah: winget install Gyan.FFmpeg\nlalu buka ulang aplikasi ini. Atau taruh ffmpeg.exe di folder yang sama dengan aplikasi.\n\n" + ex.Message, Text);
             return;
         }
         btnGo.Enabled = true;
