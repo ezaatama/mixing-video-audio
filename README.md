@@ -9,11 +9,15 @@ Aplikasi Windows sederhana untuk menggabungkan voice over (MP3/WAV/M4A) ke dalam
 
 ## Cara pakai
 
-1. Unduh `GabungAudioVideo-windows.zip` dari halaman [Releases](https://github.com/ezaatama/mixing-video-audio/releases), lalu ekstrak. Unduh hanya dari halaman ini agar terhindar dari salinan palsu.
-2. Jalankan `GabungAudioVideo.exe` (`ffmpeg.exe` harus ada di folder yang sama).
-3. Pilih video dan voice over, lalu klik **Gabungkan & Simpan**.
+1. Install FFmpeg (sekali saja). Buka Command Prompt, jalankan:
+   ```
+   winget install Gyan.FFmpeg
+   ```
+   Atau unduh manual dari [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) dan taruh `ffmpeg.exe` di folder yang sama dengan aplikasi.
+2. Unduh `GabungAudioVideo-windows.zip` dari halaman [Releases](https://github.com/ezaatama/mixing-video-audio/releases), lalu ekstrak. Unduh hanya dari halaman ini agar terhindar dari salinan palsu.
+3. Jalankan `GabungAudioVideo.exe`, pilih video dan voice over, lalu klik **Gabungkan & Simpan**.
 
-Butuh Windows 10/11 (.NET Framework 4.x sudah bawaan).
+Butuh Windows 10/11 (.NET Framework 4.x sudah bawaan). Jika muncul "Windows protected your PC", klik **More info → Run anyway** (aplikasi belum ditandatangani digital).
 
 ## Build dari source
 
@@ -23,7 +27,7 @@ Tidak perlu install Visual Studio. Jalankan:
 build.bat
 ```
 
-Untuk membuat zip rilis (perlu ffmpeg terpasang, misalnya `winget install Gyan.FFmpeg`):
+Untuk membuat zip rilis:
 
 ```
 powershell -ExecutionPolicy Bypass -File release.ps1
@@ -33,4 +37,4 @@ powershell -ExecutionPolicy Bypass -File release.ps1
 
 Kode aplikasi ini berlisensi MIT (lihat `LICENSE`).
 
-File rilis menyertakan `ffmpeg.exe` dari [gyan.dev](https://www.gyan.dev/ffmpeg/builds/), yang berlisensi **GPL v3**. FFmpeg adalah program terpisah yang dipanggil oleh aplikasi ini. Lisensi dan link source code-nya ada di `FFMPEG-LICENSE` dan `FFMPEG-README.txt`.
+Aplikasi ini memanggil [FFmpeg](https://ffmpeg.org) sebagai program terpisah. FFmpeg tidak disertakan dan dipasang sendiri oleh pengguna, dengan lisensinya sendiri (LGPL/GPL).
